@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="th-TH" ng-app="myApp">
+<head>
+
+<meta charset="UTF-8">
+
+<title>ยื่นใบสมัคร </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body ng-controller="Ctrl">
+    <h1 style="text-align: center; color: lightskyblue;">แบบฟอร์มการกรอกข้อมูล</h1>
+    <div class="container">
+        <br>
+        <button class="btn btn-primary" type="button" ng-click="selecttest()">ดูข้อมูล</button>
+        <br><br>
+        
+        <table class="table table-striped" >
+   
+            <tr>
+                <th>ลำดับ</th>
+                <th>รหัสนิสิต</th>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>ชั้นปี</th>
+                <th>สาขา</th>
+                <th>เบอร์โทร</th>
+                <th>ที่อยู่</th>
+                <th>email </th>
+                <th>delete</th>
+              
+            </tr>
+            <tr ng-repeat="x in record track by $index" >
+                <form>
+                    <th>{{$index+1}}</th>
+                    <td>{{x.student_ID}}</td> 
+                    <td>{{x.name}}</td>
+                    <td>{{x.lastname}}</td>
+                    <td>{{x.collegeyear}}</td>
+                    <td>{{x.department}}</td>
+                    <td>{{x.phone}}</td>
+                    <td>{{x.address}}</td>
+                    <td>{{x.email}}</td> 
+                    <td><i class="fas fa-minus-circle btn" style="color: red;widows: 100px;" ng-click="deletetest(x.Rec_id)"> </i></td>
+                    <td><button class="btn btn-primary" type="button" ng-click="edittest(x.Rec_id)" a href="editform.html">edit</b utton></td>
+                </form>
+            </tr>
+            <form>
+                <tr class="table-warning">
+                    <td></td>
+                    <td><input type="text" ng-model="student_data.student_ID"   class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.name"         class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.lastname"     class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.collegeyear" class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.department"   class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.phone"        class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.address"      class="form-control"></td>
+                    <td><input type="text" ng-model="student_data.email"        class="form-control"></td>
+                    
+                    <td></td>
+                </tr>
+                <tr class="table-warning">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-primary" type="button" ng-click="savetest()">Update</button></td>
+                    
+                </tr>
+            </form>
+           
+        </table>
+        
+        
+        
+        </div> <!--container -->
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+        
+        <script src="./work.js?2"></script>
+      </body>
+</html>
+    
